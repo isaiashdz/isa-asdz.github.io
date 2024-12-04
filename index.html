@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti Mi Amor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff4081, #ff80ab);
+            background-size: 400% 400%;
+            animation: slowBackgroundChange 60s infinite;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        @keyframes slowBackgroundChange {
+            0% { background-position: 0% 50%; background-color: #ff4081; }
+            25% { background-position: 50% 50%; background-color: #ff80ab; }
+            50% { background-position: 100% 50%; background-color: #9c4dcc; }
+            75% { background-position: 50% 50%; background-color: #f06292; }
+            100% { background-position: 0% 50%; background-color: #ff4081; }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 10px auto;
+            width: 80%;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .heart {
+            font-size: 5rem;
+            margin: 20px auto;
+            cursor: pointer;
+            animation: pulse 0.4s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        .animated-text {
+            font-size: 2rem;
+            font-family: "Impact, Charcoal, sans-serif";
+            color: #800080; /* Morado */
+            font-weight: 800;
+            margin-top: 30px;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px #800080, 0 0 10px #800080, 0 0 20px #800080; }
+            50% { text-shadow: 0 0 10px #7a3e9f, 0 0 30px #7a3e9f; }
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .star {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #ff7ad9;
+            border-radius: 50%;
+            animation: float 1s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>PARA TI MI AMOR JAZMIN MI NIÑA ❤️</h1>
+    <p>Quiero que sepas cuánto significas para mí... Porque en verdad si es mucho muchisimo, Cada día contigo es especial, y si es todos los dias a pesar de que no te vea, a pesar de que solo es por chat, pero en realidad pues no considero eso, porque siento que siempre estas ahí y es porque te tengo en mi corazón❤️ y tambien siempre en mi mente, te volviste mi pensamiento de todos los dias mi chiquita, te robaste mi corazón porque ya es tuyo, que lindo detalle de aparecer en mi vida y lindo detalle de Dios igual, te quiero mucho mi amor bonita, me encantas mucho que hasta me tienes diciendote cosas cursis jeje, me gustas amor y te quiero muchoteee.</p>
+    <div class="heart" id="heart">❤️</div>
+    <p id="message" class="hidden">¡CADA LATIDO DE ESTE CORAZÓN ES POR TI!</p>
+    <p class="animated-text" id="animatedText">ERES MI CHIQUITA LINDA ✨</p>
+
+    <script>
+
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * window.innerWidth + 'px';
+            star.style.top = Math.random() * window.innerHeight + 'px';
+            star.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(star);
+            star.addEventListener('mouseover', () => {
+                star.remove();
+            });
+            setTimeout(() => star.remove(), 5000);
+        }
+        setInterval(createStar, 500);
+
+        // Animación interactiva del corazón
+        const heart = document.getElementById('heart');
+        heart.addEventListener('click', () => {
+            const message = document.getElementById('message');
+            message.classList.toggle('hidden');
+        });
+
+        // Cambiar texto animado aleatoriamente
+        const animatedText = document.getElementById('animatedText');
+        const phrases = [
+            'ERES MI ESTRELLA MAS BRILLANTE ✨',
+            'MI CORAZÓN LATE POR TI ❤️',
+            'CADA DIA ES MUY ESPECIAL CONTIGO 🌟',
+            'TE QUIERO HASTA EL INFINITO 💖',
+            'ERES EL MOTIVO DE MI SONRISA 💖'
+        ];
+        setInterval(() => {
+            const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+            animatedText.textContent = randomPhrase;
+        }, 3000);
+    </script>
+</body>
+</html>
